@@ -26,6 +26,7 @@ class TasksController < ApplicationController
         @task = Task.find(params[:id])
         @task.update(task_params)
         # Will raise ActiveModel::ForbiddenAttributesError
+        redirect_to task_path(@task)
       end
 
     def destroy
